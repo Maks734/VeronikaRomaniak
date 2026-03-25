@@ -161,6 +161,17 @@
             letter-spacing: 1px;
             color: #999;
         }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .links { display: none; } /* Для мобілки краще зробити бургер-меню */
+            header { justify-content: center; }
+            section { padding: 60px 5%; }
+        }
     </style>
 </head>
 <body>
