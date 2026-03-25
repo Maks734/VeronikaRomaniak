@@ -176,21 +176,38 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-       @media (max-width: 768px) {
-    .burger {
-        display: flex; /* показуємо бургер на мобільних */
-        position: absolute;
-        right: 8%;
-        top: 32px;
-    }
+        #menu-toggle {
+    display: none;
+}
+   .burger {
+    display: none; /* ховаємо на десктопі */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    justify-content: center;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* При мобільному ширині */
+@media (max-width: 768px) {
+    .burger { display: flex; }
 
     .links {
-        display: none; /* ховаємо навігацію за замовчуванням */
+        display: none;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        background: var(--bg-light);
+        background: var(--bg);
         flex-direction: column;
         padding: 20px 0;
         gap: 20px;
@@ -202,6 +219,7 @@
         flex-direction: column;
         gap: 15px;
         align-items: center;
+        margin: 0;
     }
 
     /* Показати меню при активному чекбоксі */
@@ -221,9 +239,8 @@
     #menu-toggle:checked + .burger span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-
-    header { justify-content: space-between; }
-    section { padding: 60px 5%; }
+    #menu-toggle {
+    display: none;
 }
     </style>
 </head>
