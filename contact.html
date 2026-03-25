@@ -183,16 +183,69 @@
         }
 
         @media (max-width: 768px) {
-            .links { display: none; } /* Для мобілки краще зробити бургер-меню */
-            header { justify-content: center; }
-            section { padding: 60px 5%; }
-        }
+    .burger {
+        display: flex; /* показуємо бургер на мобільних */
+        position: absolute;
+        right: 8%;
+        top: 22px;
+    }
+
+    .links {
+        display: none; /* ховаємо навігацію за замовчуванням */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-light);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .links ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Показати меню при активному чекбоксі */
+    #menu-toggle:checked + .burger + .links {
+        display: flex;
+    }
+
+    /* Анімація бургер-хрестик */
+    #menu-toggle:checked + .burger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-toggle:checked + .burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked + .burger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    header { justify-content: space-between; }
+    section { padding: 60px 5%; }
+}
     </style>
 </head>
 <body>
 
-    <header>
-    <a href="VeronikaRomaniak.html" class="logo">AURA</a>
+     <header>
+    <div class="logo">AURA</div>
+
+    <!-- Бургер -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
     <nav class="links">
         <ul>
             <li><a href="index.html">Головна</a></li>
