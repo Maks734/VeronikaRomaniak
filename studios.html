@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студії | Aura Aesthetic Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #d4a373;
+            --bg: #fffaf5;
+            --text: #2d2d2d;
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Важливо, щоб падінги не розширювали шапку */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    padding-bottom: 10px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+.links ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li a {
+    color: #2d2d2d;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.links li a:hover {
+    color: #d4a373; /* Наш колір --accent */
+}
+
+
+        /* Контент сторінки */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .studio-page-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .studio-page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        /* Секція кожної студії */
+        .studio-detail {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            margin-bottom: 120px;
+            align-items: center;
+        }
+
+        .studio-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .studio-detail:nth-child(even) .detail-text {
+            direction: ltr;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 20px 20px 0px var(--accent);
+        }
+
+        .detail-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 20px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .specs-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .specs-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .btn-book {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--text);
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+
+        .btn-book:hover {
+            background: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .studio-detail { grid-template-columns: 1fr; gap: 30px; }
+            .studio-detail:nth-child(even) { direction: ltr; }
+            .detail-image img { height: 350px; box-shadow: 10px 10px 0px var(--accent); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <a href="VeronikaRomaniak.html" class="logo">AURA</a>
+    <nav class="links">
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="studios.html">Студії</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="container">
+        <div class="studio-page-header">
+            <h1>Наші простори</h1>
+            <p>Кожна зала спроєктована для створення ідеального кадру</p>
+        </div>
+
+        <section class="studio-detail">
+            <div class="detail-image">
+                <img src="photo_2026-03-25_19-54-53.jpg" alt="Studio A">
+            </div>
+            <div class="detail-text">
+                <h2>Studio A: Natural Light Zone</h2>
+                <span class="price-tag">1100 грн / година</span>
+                <p>Основний акцент нашого простору. Завдяки панорамним вікнам та білому мінімалізму, тут завжди багато м'якого світла.</p>
+                <ul class="specs-list">
+                    <li>Площа: 80 м², стелі 4 метри</li>
+                    <li>Мобільні фактурні стіни для швидкої зміни фону</li>
+                    <li>Професійні джерела постійного світла GODOX</li>
+                    <li>Мінімалістичні дизайнерські меблі</li>
+                </ul>
+                <a href="#" class="btn-book">Перевірити вільний час</a>
+            </div>
+        </section>
+
+        <section class="studio-detail">
+            <div class="detail-image">
+                <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80" alt="Studio B">
+            </div>
+            <div class="detail-text">
+                <h2>Studio B: Lifestyle Apartment</h2>
+                <span class="price-tag">1100 грн / година</span>
+                <p>Повноцінна імітація стильної сучасної квартири. Ідеально підходить для зйомок домашнього затишку, кулінарних блогів та брендів одягу.</p>
+                <ul class="specs-list">
+                    <li>Кухня-острів з робочою зоною</li>
+                    <li>Зона відпочинку з дизайнерським ліжком та текстилем</li>
+                    <li>Діючий камін та ванна на ніжках</li>
+                    <li>Велика кількість трендового реквізиту</li>
+                </ul>
+                <a href="#" class="btn-book">Перевірити вільний час</a>
+            </div>
+        </section>
+
+        <section class="studio-detail">
+            <div class="detail-image">
+                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80" alt="PodRoom">
+            </div>
+            <div class="detail-text">
+                <h2>PodRoom: Podcast & Video</h2>
+                <span class="price-tag">1000 грн / година</span>
+                <p>Професійна звукоізольована кабіна для тих, хто створює аудіо- та відеоконтент найвищої якості.</p>
+                <ul class="specs-list">
+                    <li>Акустичний поролон та звукопоглинальні панелі</li>
+                    <li>Мікрофони Shure SM7B та аудіоінтерфейс Focusrite</li>
+                    <li>Кероване RGB-освітлення для створення атмосфери</li>
+                    <li>Технічна підтримка адміністратора включена</li>
+                </ul>
+                <a href="#" class="btn-book">Забронювати сесію</a>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; background: #fdfdfd; font-size: 12px; letter-spacing: 1px; color: #999;">
+        AURA AESTHETIC SPACE © 2026 | ЛЬВІВ, УКРАЇНА
+    </footer>
+
+</body>
+</html>

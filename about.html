@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас | Aura Aesthetic Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #d4a373;
+            --bg: #fffaf5;
+            --text: #2d2d2d;
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Важливо, щоб падінги не розширювали шапку */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    padding-bottom: 10px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+.links ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li a {
+    color: #2d2d2d;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.links li a:hover {
+    color: #d4a373; /* Наш колір --accent */
+}
+
+        /* Контент */
+        .hero-about {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .hero-about h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 6vw, 64px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .about-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 1px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        .mission-box {
+            background: white;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 18px;
+            color: #555;
+            border-left: 4px solid var(--accent);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #fdfdfd;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <a href="VeronikaRomaniak.html" class="logo">AURA</a>
+    <nav class="links">
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="studios.html">Студії</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero-about">
+        <h1>Наша історія</h1>
+    </section>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>Філософія Aura</h2>
+            <p>
+                Проєкт <strong>“Aura Aesthetic Space”</strong> — це інноваційний мультифункціональний креативний простір у Львові. 
+                Ми створили це місце як відповідь на виклик сучасності: потребу в естетичних, готових до зйомки локаціях, 
+                що відповідають світовим трендам візуальної культури.
+            </p>
+            <div class="mission-box">
+                "Ми не просто здаємо квадратні метри. Ми надаємо готове естетичне середовище, де кожен куточок спроєктований як ідеальний кадр."
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Чому ми?</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Концептуальність</h3>
+                    <p>Стилістика Pinterest, білий мінімалізм та «скандинавський затишок» у кожній деталі.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Мультифункціональність</h3>
+                    <p>Поєднання фотостудії, професійної підкаст-кімнати та затишного коворкінгу.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Сервіс</h3>
+                    <p>Власна каво-зона, професійне обладнання Godox та Shure, а також підтримка мобілографа.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Наша мета</h2>
+            <p>
+                Стати головним хабом для креативної спільноти міста, поєднуючи комерційну прибутковість із соціальною роллю 
+                майданчика для розвитку медіа-спеціалістів та брендів.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        AURA AESTHETIC SPACE © 2026 | ЛЬВІВ, УКРАЇНА
+    </footer>
+
+</body>
+</html>

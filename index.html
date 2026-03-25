@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Aesthetic Space Lviv</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #d4a373; 
+            --bg-light: #fffaf5;
+            --text-dark: #2d2d2d;
+            --soft-pink: #fbe4e4;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(255, 250, 245, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+        }
+
+        .links ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .links li a {
+            color: var(--text-dark);
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+
+        .links li a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('photo_2026-03-25_19-54-53.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 400;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            background: var(--accent);
+            color: white;
+            border-radius: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--accent);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        section {
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .btnd {
+            margin-top: 20px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid var(--accent);
+            padding: 5px 0;
+            cursor: pointer;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btnd:hover {
+            letter-spacing: 3px;
+            color: var(--accent);
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: left;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .service-item {
+            min-width: 200px;
+        }
+
+        .service-item span {
+            display: block;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .cta {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 120px 20px;
+        }
+
+        .cta h2::after { background: #fff; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .links { display: none; } /* Для мобілки краще зробити бургер-меню */
+            header { justify-content: center; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AURA</div>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="studios.html">Студії</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p>Lviv Creative Hub</p>
+            <h1>Aura Aesthetic Space</h1>
+            <a href="studios.html" class="btn">Забронювати візит</a>
+        </section>
+
+        <section class="about">
+            <h2>Філософія простору</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 18px; color: #666; font-style: italic;">
+                "Ми створили Aura не просто як студію, а як чисте полотно для ваших ідей. Мінімалізм, природне світло та естетика в кожній деталі."
+            </p>
+        </section>
+
+        <section class="studios">
+            <h2>Наші локації</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="photo_2026-03-25_19-54-53.jpg" alt="Studio A">
+                    <div class="card-content">
+                        <h3>Studio A</h3>
+                        <p>Світла зона з мінімалістичним дизайном та французькими вікнами.</p>
+                        <button class="btnd">Дивитися галерею</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80" alt="Studio B">
+                    <div class="card-content">
+                        <h3>Studio B</h3>
+                        <p>Імітація сучасної квартири для lifestyle-зйомок та брендів.</p>
+                        <button class="btnd">Дивитися галерею</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80" alt="PodRoom">
+                    <div class="card-content">
+                        <h3>PodRoom</h3>
+                        <p>Професійна звукоізоляція для подкастів та запису інтерв'ю.</p>
+                        <button class="btnd">Дивитися галерею</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Прайс-лист</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <p>Оренда залів</p>
+                    <span>від 1100 грн/год</span>
+                </div>
+                <div class="service-item">
+                    <p>Подкаст-студія</p>
+                    <span>1000 грн/год</span>
+                </div>
+                <div class="service-item">
+                    <p>Коворкінг</p>
+                    <span>від 150 грн/год</span>
+                </div>
+                <div class="service-item">
+                    <p>Content Day</p>
+                    <span>індивідуально</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Почнемо створювати?</h2>
+            <p style="margin-bottom: 40px; opacity: 0.8; letter-spacing: 1px;">Забронюйте зручний час онлайн</p>
+            <a href="#" class="btn">Перевірити вільні дати</a>
+        </section>
+    </main>
+
+    <footer style="padding: 40px; text-align: center; font-size: 12px; letter-spacing: 2px; color: #999;">
+        &copy; 2026 AURA AESTHETIC SPACE. LVIV, UKRAINE.
+    </footer>
+</body>
+</html>

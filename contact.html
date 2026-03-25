@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти | Aura Aesthetic Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #d4a373;
+            --bg: #fffaf5;
+            --text: #2d2d2d;
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+       header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Важливо, щоб падінги не розширювали шапку */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    padding-bottom: 10px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+.links ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li a {
+    color: #2d2d2d;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.links li a:hover {
+    color: #d4a373; 
+}
+
+        /* Секція контактів */
+        .contact-container {
+            max-width: 1100px;
+            margin: 140px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .info-item p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .info-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .info-item a:hover { color: var(--accent); }
+
+        /* Форма */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #eee;
+            font-family: inherit;
+            background: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 15px;
+            background: var(--text);
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-send:hover { background: var(--accent); }
+
+        /* Мапа */
+        .map-section {
+            width: 100%;
+            height: 450px;
+            filter: grayscale(1);
+            transition: 0.5s;
+        }
+
+        .map-section:hover { filter: grayscale(0); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <a href="VeronikaRomaniak.html" class="logo">AURA</a>
+    <nav class="links">
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="studios.html">Студії</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Зв’яжіться з нами</h1>
+            <p style="margin-bottom: 40px; color: #666;">Ми завжди раді новим проєктам та колабораціям. Залиште повідомлення або завітайте до нас на каву.</p>
+            
+            <div class="info-item">
+                <h3>Адреса</h3>
+                <p>м. Львів, Україна</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Телефон</h3>
+                <p><a href="tel:+380955667959">+380 (95) 566 79 59</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>Email</h3>
+                <p><a href="mailto:veronikaromanak117@gmail.com">veronikaromanak117@gmail.com</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>Графік роботи</h3>
+                <p>Щодня: 09:00 — 21:00</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label>Ваше ім'я</label>
+                    <input type="text" placeholder="Вероніка">
+                </div>
+                <div class="form-group">
+                    <label>Ваш Email</label>
+                    <input type="email" placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label>Повідомлення</label>
+                    <textarea rows="5" placeholder="Я хотів би забронювати Studio A..."></textarea>
+                </div>
+                <button type="submit" class="btn-send">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82352.31644781443!2d23.9421959826315!3d49.83277831034448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c391c0a63%3A0x8303f8581010121!2z0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1711395000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <footer>
+        AURA AESTHETIC SPACE © 2026 | LVIV, UKRAINE
+    </footer>
+
+</body>
+</html>
